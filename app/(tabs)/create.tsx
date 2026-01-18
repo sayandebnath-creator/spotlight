@@ -103,6 +103,7 @@ export default function CreateScreen() {
           contentContainerStyle={styles.scrollContent}
           bounces={false}
           keyboardShouldPersistTaps="handled"
+          contentOffset={{x:0,y:100}}
         >
           <View
             style={[
