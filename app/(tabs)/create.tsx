@@ -65,7 +65,8 @@ export default function CreateScreen() {
     <KeyboardAvoidingView
       behavior={Platform.OS === "ios" ? "padding" : "height"}
       style={styles.container}
-      keyboardVerticalOffset={Platform.OS === "ios" ? 20 : 0}
+      // added android offset
+      keyboardVerticalOffset={Platform.OS === "ios" ? 100 : 30} 
     >
       <View style={styles.contentContainer}>
         {/* Header */}
