@@ -106,8 +106,8 @@ export default function CreateScreen() {
         >
           <View
             style={[
-              styles.shareButton,
-              isSharing && styles.shareButtonDisabled,
+              styles.content,
+              isSharing && styles.contentDisabled,
             ]}
           >
             {/* Image Section */}
