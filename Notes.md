@@ -35,3 +35,17 @@ Simpler API: When you prefer a more straightforward API with fewer options to co
 Specific opacity animations: When you need precise control over the opacity value on press.
 Legacy support: For maintaining consistency with existing components.
 
+# 📸 Expo Image vs React Native Image
+## Use Expo Image when:
+Performance: Expo Image uses native image libraries that can offer better performance.
+Caching: Built-in caching system is more robust and configurable.
+Modern image capabilities: Need for advanced features like content-aware resizing, blurhash placeholders, and progressive loading.
+Transitions: When you need smooth transitions between image loading states.
+Cross-platform consistency: More consistent behavior across iOS and Android.
+Adaptivity: Better support for adaptive images based on screen size and resolution.
+## Use React Native Image when:
+Simplicity: When you need basic image display with minimal configuration.
+Bundle size: When you're trying to keep your app's bundle size smaller.
+No Expo dependency: When you're not using Expo or want to minimize dependencies.
+Legacy support: When maintaining compatibility with existing code that uses React Native Image.
+Basic requirements: When advanced image features aren't needed for your use case.
