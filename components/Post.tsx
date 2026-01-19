@@ -5,6 +5,9 @@ import { Image } from 'expo-image'
 import { Ionicons } from '@expo/vector-icons'
 import { COLORS } from '@/constants/theme'
 import { Id } from '@/convex/_generated/dataModel'
+import { useState } from 'react'
+import { api } from '@/convex/_generated/api'
+import { useMutation } from 'convex/react'
 
 type Postprops = {
     post: {
@@ -25,6 +28,20 @@ type Postprops = {
 };
 
 export default function Post({post}: Postprops) {
+    const [isLiked, setIsLiked] = useState(post.isLiked);
+    const [likesCount, setLikesCount] = useState(post.likes);
+
+    const toogleLike = useMutation(api.posts.toogleLike);
+
+    const handleLike = async () => {
+        try {
+            const newIsLiked = await toogleLike({postId: post._id});
+            setIsLiked(newIsLiked)
+            setLikesCount((prev) => newIsLiked ? prev + 1 : prev -1);
+        } catch (error) {
+            console.error("Error toggling like:", error);
+        }
+    }
   return (
     <View style={styles.post}>
         {/* POST HEADER */}
@@ -61,11 +78,11 @@ export default function Post({post}: Postprops) {
         {/* Post actions */}
         <View style={styles.postActions}>
             <View style={styles.postActionsLeft}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={handleLike}>
                 <Ionicons
-                name={"heart-outline"}
+                name={isLiked ? "heart":"heart-outline"}
                 size={24}
-                color={COLORS.white}
+                color={isLiked ? COLORS.primary : COLORS.white}
                 />
             </TouchableOpacity>
             <TouchableOpacity>
@@ -83,7 +100,7 @@ export default function Post({post}: Postprops) {
         {/* POST INFO */}
         <View style={styles.postInfo}>
             <Text style={styles.likesText}>
-            "Be the first to like"
+            {likesCount > 0 ? `${likesCount} likes` : "Be the first to like this"}
             </Text>
             {post.caption && (
             <View style={styles.captionContainer}>
