@@ -8,6 +8,8 @@ import { Id } from '@/convex/_generated/dataModel'
 import { useState } from 'react'
 import { api } from '@/convex/_generated/api'
 import { useMutation } from 'convex/react'
+import CommentsModal from './CommentsModal'
+import { formatDistanceToNow } from 'date-fns'
 
 type Postprops = {
     post: {
@@ -30,6 +32,8 @@ type Postprops = {
 export default function Post({post}: Postprops) {
     const [isLiked, setIsLiked] = useState(post.isLiked);
     const [likesCount, setLikesCount] = useState(post.likes);
+    const [commentsCount, setCommentsCount] = useState(post.comments);
+    const [showComments, setShowComments] = useState(false);
 
     const toogleLike = useMutation(api.posts.toogleLike);
 
@@ -85,7 +89,7 @@ export default function Post({post}: Postprops) {
                 color={isLiked ? COLORS.primary : COLORS.white}
                 />
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=> setShowComments(true)}>
                 <Ionicons name="chatbubble-outline" size={22} color={COLORS.white} />
             </TouchableOpacity>
             </View>
@@ -110,15 +114,18 @@ export default function Post({post}: Postprops) {
             )}
 
             {post.comments > 0 && (
-            <TouchableOpacity>
-                <Text style={styles.commentsText}>View all 2 comments</Text>
+            <TouchableOpacity onPress={()=> setShowComments(true)}>
+                <Text style={styles.commentsText}>
+                View all {commentsCount} comments
+                </Text>
             </TouchableOpacity>
             )}
 
             <Text style={styles.timeAgo}>
-            2 hrs ago
+            {formatDistanceToNow(post._creationTime, {addSuffix: true})}
             </Text>
         </View>
+        <CommentsModal postId={post._id} visible={showComments} onClose={() => setShowComments(false)} onCommentAdded={() => setCommentsCount(prev => prev + 1)} />
     </View>
   )
 }
