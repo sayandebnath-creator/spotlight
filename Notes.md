@@ -7,7 +7,7 @@ Removed FormData completely
 In Expo SDK 54, used expo-file-system/legacy to avoid deprecation errors
 
 ## In real-world application:
-Scroll view wants to render all post which will crash due to lack of memory (so we use flatlist as it renders only when it's needed)
+Scroll view wants to render all post which will crash due to lack of memory (so we use flatlist as it renders only when it's needed on the current available screen and saves memory and improve performance)
 
 # 🎉 ScrollView vs FlatList
 ## Use FlatList when:
