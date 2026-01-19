@@ -10,6 +10,7 @@ import { useQuery } from "convex/react";
 import { Loader } from "@/components/Loader";
 import { api } from "@/convex/_generated/api";
 import Post from "@/components/Post";
+import { StoriesSection } from "@/components/Stories";
 
 export default function Index() {
   
@@ -42,17 +43,6 @@ export default function Index() {
         />
     </View>
   );
-}
-
-const StoriesSection = () =>{
-  return (
-    <ScrollView showsVerticalScrollIndicator={false} horizontal style={styles.storiesContainer}>
-      {/* stories */}
-      {STORIES.map((story)=>(
-        <Story key={story.id} story={story} />
-      ))}
-    </ScrollView>
-  )
 }
 
 const NoPostsFound = () => (
