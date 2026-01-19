@@ -74,6 +74,9 @@ export default function CreateScreen() {
         caption,
         storageId,
       });
+
+      setSelectedImage(null);
+      setCaption("");
       router.push("/(tabs)");
     } catch (error) {
       console.error("Error sharing post:", error);
