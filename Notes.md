@@ -49,3 +49,5 @@ Bundle size: When you're trying to keep your app's bundle size smaller.
 No Expo dependency: When you're not using Expo or want to minimize dependencies.
 Legacy support: When maintaining compatibility with existing code that uses React Native Image.
 Basic requirements: When advanced image features aren't needed for your use case.
+
+## Expo go splashscreen does not show the image as it needs preview build to show (png file with transparent bg)
