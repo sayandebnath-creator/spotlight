@@ -1,9 +1,9 @@
 import { COLORS } from "@/constants/theme";
 import { styles } from "@/styles/notifications.styles";
 import { Ionicons } from "@expo/vector-icons";
-import { Link } from "@react-navigation/native";
 import { formatDistanceToNow } from "date-fns";
 import { Image } from "expo-image";
+import { Link } from "expo-router";
 import { Text, TouchableOpacity, View } from "react-native";
 
 export default function Notification({ notification }: any) {
