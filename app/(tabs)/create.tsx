@@ -16,7 +16,7 @@ import { COLORS } from "@/constants/theme";
 import { styles } from "@/styles/create.styles";
 
 import * as ImagePicker from "expo-image-picker";
-import * as FileSystem from "expo-file-system";
+import * as FileSystem from "expo-file-system/legacy";
 
 import { Image } from "expo-image";
 import { useMutation } from "convex/react";
@@ -54,21 +54,36 @@ export default function CreateScreen() {
 
       const uploadUrl = await generateUploadUrl();
 
-      const formData = new FormData();
-        formData.append("file", {
-          uri: selectedImage,
-          name: "image.jpg",
-          type: "image/jpeg",
-        } as any);
+      // const formData = new FormData();
+      //   formData.append("file", {
+      //     uri: selectedImage,
+      //     name: "image.jpg",
+      //     type: "image/jpeg",
+      //   } as any);
 
-        const res = await fetch(uploadUrl, {
-          method: "POST",
-          body: formData,
-        });
+      //   const res = await fetch(uploadUrl, {
+      //     method: "POST",
+      //     body: formData,
+      //   });
 
-        if (!res.ok) throw new Error("Upload failed");
+      //   if (!res.ok) throw new Error("Upload failed");
 
-        const { storageId } = await res.json();
+      //   const { storageId } = await res.json();
+      // 2. Upload image as raw binary (REQUIRED by Convex)
+      const result = await FileSystem.uploadAsync(uploadUrl, selectedImage, {
+        httpMethod: "POST",
+        // uploadType: FileSystem.FileSystemUploadType.BINARY_CONTENT,
+        headers: {
+          "Content-Type": "image/jpeg", // or image/png
+        },
+      });
+
+      if (result.status !== 200) {
+        throw new Error("Upload failed");
+      }
+
+      // 3. Extract storageId
+      const { storageId } = JSON.parse(result.body);
 
       
       await createPost({
