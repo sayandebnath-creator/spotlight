@@ -27,15 +27,15 @@ export default function login() {
       {/* BRAND SECTION */}
       <View style={styles.brandSection}>
         <View style={styles.logoContainer}>
-          <Ionicons name="leaf" size={32} color={COLORS.primary}/>
+          <Ionicons name="aperture" size={32} color={COLORS.primary}/>
         </View>
-        <Text style={styles.appName}>spotlight</Text>
+        <Text style={styles.appName}>Zenvik</Text>
         <Text style={styles.tagline}>don't miss anything</Text>
       </View>
 
       {/* ILLUSTRATION */}
       <View style={styles.illustrationContainer}>
-        <Image source={require("../../assets/images/auth-bg.png")} style={styles.illustration} resizeMode='cover'/>
+        <Image source={require("../../assets/images/sample2.png")} style={styles.illustration} resizeMode='cover'/>
       </View>
 
       {/* LOGIN SECTION */}
