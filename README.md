@@ -1,4 +1,4 @@
-# 📱 Expo React Native App (Clerk + Convex)
+# 📱 Zenvik (Clerk + Convex)
 
 Welcome 👋  
 This is a **React Native mobile application** built using **Expo**, with **Clerk** for authentication and **Convex** for backend, database, and real-time data handling.
