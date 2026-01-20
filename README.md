@@ -16,6 +16,7 @@ This is a **React Native mobile application** built using **Expo**, with **Clerk
 ---
 
 ## 🧠 App Architecture (High Level)
+```
 React Native (Expo)
 │
 ├── Clerk (Auth)
@@ -25,7 +26,7 @@ React Native (Expo)
 ├── Queries
 ├── Mutations
 └── Database (real-time)
-
+```
 
 ---
 
@@ -50,6 +51,7 @@ npx expo start
 ```
 
 ## 📂 Project Structure
+```
 app/
  ├── (auth)/        # Login / Signup screens
  ├── (tabs)/        # Main app tabs
@@ -61,7 +63,7 @@ convex/
  ├── schema.ts      # Database schema
  ├── queries.ts     # Read operations
  ├── mutations.ts   # Write operations
-
+```
 ## 🔐 Authentication (Clerk)
 ```
 Email & password authentication
