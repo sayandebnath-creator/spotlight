@@ -33,8 +33,6 @@ type Postprops = {
 export default function Post({post}: Postprops) {
     const [isLiked, setIsLiked] = useState(post.isLiked);
     const [isBookmarked, setIsBookmarked] = useState(post.isBookmarked);
-    const [likesCount, setLikesCount] = useState(post.likes);
-    const [commentsCount, setCommentsCount] = useState(post.comments);
     const [showComments, setShowComments] = useState(false);
 
     const {user} = useUser();
@@ -49,7 +47,6 @@ export default function Post({post}: Postprops) {
         try {
             const newIsLiked = await toogleLike({postId: post._id});
             setIsLiked(newIsLiked)
-            setLikesCount((prev) => newIsLiked ? prev + 1 : prev -1);
         } catch (error) {
             console.error("Error toggling like:", error);
         }
@@ -135,7 +132,7 @@ export default function Post({post}: Postprops) {
         {/* POST INFO */}
         <View style={styles.postInfo}>
             <Text style={styles.likesText}>
-            {likesCount > 0 ? `${likesCount} likes` : "Be the first to like this"}
+            {post.likes > 0 ? `${post.likes.toLocaleString()} likes` : "Be the first to like this"}
             </Text>
             {post.caption && (
             <View style={styles.captionContainer}>
@@ -147,7 +144,7 @@ export default function Post({post}: Postprops) {
             {post.comments > 0 && (
             <TouchableOpacity onPress={()=> setShowComments(true)}>
                 <Text style={styles.commentsText}>
-                View all {commentsCount} comments
+                View all {post.comments} comments
                 </Text>
             </TouchableOpacity>
             )}
@@ -156,7 +153,7 @@ export default function Post({post}: Postprops) {
             {formatDistanceToNow(post._creationTime, {addSuffix: true})}
             </Text>
         </View>
-        <CommentsModal postId={post._id} visible={showComments} onClose={() => setShowComments(false)} onCommentAdded={() => setCommentsCount(prev => prev + 1)} />
+        <CommentsModal postId={post._id} visible={showComments} onClose={() => setShowComments(false)} />
     </View>
   )
 }
