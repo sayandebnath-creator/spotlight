@@ -14,8 +14,8 @@ This is a **React Native mobile application** built using **Expo**, with **Clerk
 <p align="center">
  <img src="assets/images/imgreadme2.jpg" width="230" />
   <img src="assets/images/imgreadme3.jpg" width="230" />
-  <img src="assets/images/imgreadme5.jpg" width="230" />
   <img src="assets/images/imgreadme7.jpg" width="230" />
+   <img src="assets/images/imgreadme5.jpg" width="230" />
 </p>
 ---
 
