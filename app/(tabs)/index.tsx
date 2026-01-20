@@ -28,7 +28,7 @@ export default function Index() {
   const onRefresh = () => {
     setrefreshing(true);
     setTimeout(()=>{
-      setrefreshing(false)
+      setrefreshing(false) //we can use tanstack if used
     },2000)
   }
 
