@@ -35,7 +35,7 @@ export default function login() {
 
       {/* ILLUSTRATION */}
       <View style={styles.illustrationContainer}>
-        <Image source={require("../../assets/images/sample2.png")} style={styles.illustration} resizeMode='cover'/>
+        <Image source={require("../../assets/images/sample7.png")} style={styles.illustration} resizeMode='contain'/>
       </View>
 
       {/* LOGIN SECTION */}
