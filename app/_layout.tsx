@@ -7,6 +7,8 @@ import { useCallback, useEffect } from "react";
 import * as NavigationBar from "expo-navigation-bar";
 import { Platform } from "react-native";
 
+import { StatusBar } from "expo-status-bar";
+
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
@@ -27,7 +29,7 @@ export default function RootLayout() {
       NavigationBar.setButtonStyleAsync("light");
     }
   }, []);
-  
+
   return (
     <ClerkAndConvexProvider>
       <SafeAreaProvider>
@@ -35,6 +37,7 @@ export default function RootLayout() {
           <InitialLayout />
         </SafeAreaView>
       </SafeAreaProvider>
+      <StatusBar style="light"/>
     </ClerkAndConvexProvider>
   );
 }
