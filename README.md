@@ -6,16 +6,16 @@ This is a **React Native mobile application** built using **Expo**, with **Clerk
 ## 📸 Screenshots
 
 <p align="center">
-  <img src="images/imgreadme.png" width="230" />
-  <img src="images/imgreadme2.png" width="230" />
-  <img src="images/imgreadme3.png" width="230" />
+  <img src="images/imgreadme.jpg" width="230" />
+  <img src="images/imgreadme2.jpg" width="230" />
+  <img src="images/imgreadme3.jpg" width="230" />
 </p>
 
 <p align="center">
-  <img src="images/imgreadme4.png" width="230" />
-  <img src="images/imgreadme5.png" width="230" />
-  <img src="images/imgreadme6.png" width="230" />
-  <img src="images/imgreadme7.png" width="230" />
+  <img src="images/imgreadme4.jpg" width="230" />
+  <img src="images/imgreadme5.jpg" width="230" />
+  <img src="images/imgreadme6.jpg" width="230" />
+  <img src="images/imgreadme7.jpg" width="230" />
 </p>
 ---
 
