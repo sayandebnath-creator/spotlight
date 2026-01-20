@@ -5,9 +5,18 @@ This is a **React Native mobile application** built using **Expo**, with **Clerk
 
 ## 📸 Screenshots
 
-| Login | Home | Profile |
-|------|------|---------|
-| ![](images/imgreadme.png) | ![](images/imgreadme2.png) | ![](images/imgreadme3.png) | ![](images/imgreadme4.png) | ![](images/imgreadme5.png) | ![](images/imgreadme6.png) | ![](images/imgreadme7.png)
+<p align="center">
+  <img src="images/imgreadme.png" width="230" />
+  <img src="images/imgreadme2.png" width="230" />
+  <img src="images/imgreadme3.png" width="230" />
+</p>
+
+<p align="center">
+  <img src="images/imgreadme4.png" width="230" />
+  <img src="images/imgreadme5.png" width="230" />
+  <img src="images/imgreadme6.png" width="230" />
+  <img src="images/imgreadme7.png" width="230" />
+</p>
 ---
 
 ## 🚀 Tech Stack
