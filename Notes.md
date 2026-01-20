@@ -53,3 +53,5 @@ Basic requirements: When advanced image features aren't needed for your use case
 ## Expo go splashscreen does not show the image as it needs preview build to show (png file with transparent bg)
 
 ## In convex we don't have id rather _id
+
+## asChild lets the child component handle the press while Link handles navigation.
