@@ -1,4 +1,4 @@
-import { Text, View, TouchableOpacity, Pressable, Image, ScrollView, FlatList } from "react-native";
+import { Text, View, TouchableOpacity, Pressable, Image, ScrollView, FlatList, RefreshControl } from "react-native";
 import { styles } from "../../styles/feed.styles"
 import { Link } from "expo-router";
 import { useAuth } from "@clerk/clerk-expo";
@@ -11,16 +11,26 @@ import { Loader } from "@/components/Loader";
 import { api } from "@/convex/_generated/api";
 import Post from "@/components/Post";
 import { StoriesSection } from "@/components/Stories";
+import { useState } from "react";
 
 export default function Index() {
   
   const {signOut} =useAuth()
+  const [refreshing, setrefreshing] = useState(false)
 
   const posts = useQuery(api.posts.getFeedPosts);
 
   if (posts === undefined) return <Loader/>
 
   if (posts.length === 0) return <NoPostsFound/>
+
+  // this does nothing (todo)
+  const onRefresh = () => {
+    setrefreshing(true);
+    setTimeout(()=>{
+      setrefreshing(false)
+    },2000)
+  }
 
   return (
     <View
@@ -40,6 +50,13 @@ export default function Index() {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{paddingBottom: 60}}
         ListHeaderComponent={<StoriesSection/>}
+        refreshControl={
+          <RefreshControl
+          refreshing={refreshing}
+          onRefresh={onRefresh}
+          tintColor={COLORS.primary}
+          />
+        }
         />
     </View>
   );
