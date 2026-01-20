@@ -3,6 +3,11 @@
 Welcome 👋  
 This is a **React Native mobile application** built using **Expo**, with **Clerk** for authentication and **Convex** for backend, database, and real-time data handling.
 
+## 📸 Screenshots
+
+| Login | Home | Profile |
+|------|------|---------|
+| ![](images/imgreadme.png) | ![](images/imgreadme2.png) | ![](images/imgreadme3.png) | ![](images/imgreadme4.png) | ![](images/imgreadme5.png) | ![](images/imgreadme6.png) | ![](images/imgreadme7.png)
 ---
 
 ## 🚀 Tech Stack
