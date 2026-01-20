@@ -1,50 +1,85 @@
-# Welcome to your Expo app 👋
+# 📱 Expo React Native App (Clerk + Convex)
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Welcome 👋  
+This is a **React Native mobile application** built using **Expo**, with **Clerk** for authentication and **Convex** for backend, database, and real-time data handling.
 
-## Get started
+---
 
-1. Install dependencies
+## 🚀 Tech Stack
 
-   ```bash
-   npm install
-   ```
+- **Expo / React Native** – Cross-platform mobile development (Android & iOS)
+- **Expo Router** – File-based routing
+- **Clerk** – Authentication (Login, Signup, Sessions, OAuth-ready)
+- **Convex** – Backend-as-a-Service (Database, server functions, real-time sync)
+- **TypeScript** – Type safety and better DX
 
-2. Start the app
+---
 
-   ```bash
-    npx expo start
-   ```
+## 🧠 App Architecture (High Level)
+React Native (Expo)
+│
+├── Clerk (Auth)
+│ └── userId / session
+│
+└── Convex (Backend)
+├── Queries
+├── Mutations
+└── Database (real-time)
 
-In the output, you'll find options to open the app in a
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+---
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## 🛠️ Getting Started
 
-## Get a fresh project
-
-When you're ready, run:
+### 1️⃣ Install dependencies
 
 ```bash
-npm run reset-project
+npm install
+```
+### 2️⃣ Configure Environment Variables
+
+Create a .env file in the root directory:
+```
+EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_key
+EXPO_PUBLIC_CONVEX_URL=your_convex_url
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 3️⃣ Start the app
+```
+npx expo start
+```
 
-## Learn more
+## 📂 Project Structure
+app/
+ ├── (auth)/        # Login / Signup screens
+ ├── (tabs)/        # Main app tabs
+ ├── user/          # Dynamic user routes
+ ├── _layout.tsx    # Root layout
+ └── index.tsx      # Entry screen
 
-To learn more about developing your project with Expo, look at the following resources:
+convex/
+ ├── schema.ts      # Database schema
+ ├── queries.ts     # Read operations
+ ├── mutations.ts   # Write operations
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## 🔐 Authentication (Clerk)
+```
+Email & password authentication
 
-## Join the community
+Secure session handling
 
-Join our community of developers creating universal apps.
+User data accessible throughout the app
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Ready for OAuth (Google, GitHub, etc.)
+```
+
+## 🗄️ Backend & Database (Convex)
+```
+Server-side logic using queries & mutations
+
+Real-time updates without manual state syncing
+
+Integrated authentication with Clerk
+
+Strongly typed backend
+```
