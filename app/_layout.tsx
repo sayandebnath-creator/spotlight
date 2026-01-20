@@ -3,7 +3,9 @@ import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import InitialLayout from "@/components/InitialLayout";
 import ClerkAndConvexProvider from "@/providers/ClerkAndConvexProvider";
 import { useFonts } from "expo-font";
-import { useCallback } from "react";
+import { useCallback, useEffect } from "react";
+import * as NavigationBar from "expo-navigation-bar";
+import { Platform } from "react-native";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -17,6 +19,15 @@ export default function RootLayout() {
       await SplashScreen.hideAsync();
     }
   }, [fontsLoaded]);
+
+  // update the native navigation bar color to black on android
+  useEffect(() => {
+    if(Platform.OS === 'android') {
+      NavigationBar.setBackgroundColorAsync("#000000");
+      NavigationBar.setButtonStyleAsync("light");
+    }
+  }, []);
+  
   return (
     <ClerkAndConvexProvider>
       <SafeAreaProvider>
