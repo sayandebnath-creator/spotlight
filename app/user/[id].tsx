@@ -86,14 +86,17 @@ export default function UserProfileScreen() {
                 numColumns={3}
                 scrollEnabled={false}
                 renderItem={({ item }) => (
-                    <Image
+                <TouchableOpacity style={styles.gridItem}>
+                     <Image
                         source={item.imageUrl}
                         style={styles.gridImage}
                         contentFit='cover'
                         transition={200}
                         cachePolicy='memory-disk'
                     />
+                </TouchableOpacity>
                 )}
+                keyExtractor={(item) => item._id}
                 />
             )}
         </View>
