@@ -84,6 +84,7 @@ export default function UserProfileScreen() {
                 <FlatList
                 data={posts}
                 numColumns={3}
+                scrollEnabled={false}
                 renderItem={({ item }) => (
                     <Image
                         source={item.imageUrl}
