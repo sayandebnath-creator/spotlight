@@ -12,7 +12,9 @@
       "supportsTablet": true
     },
     "android": {
-      "permissions": ["INTERNET"],
+      "permissions": [
+        "INTERNET"
+      ],
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#000000"
@@ -39,7 +41,7 @@
     "extra": {
       "router": {},
       "eas": {
-        "projectId": "246bde3b-4d94-46de-bc53-2d0b65bbe984"
+        "projectId": "b79f3a24-25cc-42e1-b05b-6d332a3db48f"
       }
     }
   }
