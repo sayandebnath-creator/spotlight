@@ -5,7 +5,7 @@ import { styles } from "@/styles/feed.styles"
 
 export const StoriesSection = () =>{
   return (
-    <ScrollView showsVerticalScrollIndicator={false} horizontal style={styles.storiesContainer}>
+    <ScrollView showsHorizontalScrollIndicator={false} horizontal style={styles.storiesContainer}>
       {/* stories */}
       {STORIES.map((story)=>(
         <Story key={story.id} story={story} />
