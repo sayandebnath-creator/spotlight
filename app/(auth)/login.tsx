@@ -15,8 +15,13 @@ export default function login() {
       const {createdSessionId, setActive } = await startSSOFlow ({ strategy: "oauth_google"});
 
       if (setActive && createdSessionId) {
-        setActive({session: createdSessionId});
-        router.replace("/(tabs)");
+        // 1️⃣ Activate the session
+        await setActive({ session: createdSessionId });
+
+        // 2️⃣ SMALL DELAY to avoid auth-screen flash
+        setTimeout(() => {
+          router.replace("/(tabs)");
+        }, 300); // 200–400ms is ideal
       }
     } catch (error) {
       console.error("OAuth error:", error);
